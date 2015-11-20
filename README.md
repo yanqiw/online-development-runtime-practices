@@ -37,7 +37,35 @@ I need to login my VM by SSH client. Below are two options:
 I prefer MobaXterm, as it provides more powerful tools
 
 #Initialize online runtime
+##Build a bare git repository image
+As I need a remote git repository to synchronized my local code to online rumtime. I create a bare git repository docker-image which could be accessed by my SSH key.
 
+
+###Clone yanqiw/gitsyn repo
+On the VM:
+```shell
+cd /to/your/workspace
+git clone https://github.com/yanqiw/gitsyn
+```
+####Add your public ssh key
+On the VM:
+```shell
+cd gitsyn
+mv sshkeys/authorized_keys.sample sshkeys/authorized_keys 
+echo path/your/sshpubilckey > sshkeys/authorized_keys
+```
+####Build Image
+On the VM:
+```shell
+docker build -t project-name-git-repo .
+```
+####Run the image
+On the VM:
+```shell
+docker run --name project-name-git -v your/host/workdir:/workspace -p YOUR_HOST_PORT:22 project-name-git-repo
+```
+
+You can refer to [yanqiw/gitsyn](https://github.com/yanqiw/gitsyn) for more details.
 #Development
 
 #Deploy
