@@ -40,7 +40,6 @@ I prefer MobaXterm, as it provides more powerful tools
 ##Build a bare git repository image
 As I need a remote git repository to synchronized my local code to online rumtime. I create a bare git repository docker-image which could be accessed by my SSH key.
 
-
 ###Clone yanqiw/gitsyn repo
 On the VM:
 ```shell
@@ -64,7 +63,6 @@ On the VM:
 ```shell
 docker run --name project-name-git -v your/host/workdir:/workspace -p YOUR_HOST_PORT:22 project-name-git-repo
 ```
-
 You can refer to [yanqiw/gitsyn](https://github.com/yanqiw/gitsyn) for more details.
 #Development
 
