@@ -149,10 +149,10 @@ __'-v "$PWD":/code'__ is used to attach the code to container.
 
 #Development
 ##Edit code and commit to online runtime
-I can open a IDE, such as sublime text to edit my code. After edited, I commit the code to local git and push to remote. 
+I can open a IDE, such as sublime text to edit my code. After edited, I commit the code to local git and push to remote, and check the result on cloud development runtime.
 
 ###Auto push to remote after commit
-I create a git hook to push the code to remote after commit.
+As every changes need to be push to remote git repository, I create a git hook to push the code to remote after commit in my local git.
  
 In your project folder:
 ```shell
@@ -165,7 +165,7 @@ echo 'git push runtime master' >> post-commit
 For now, I still need to login the VM to check the logs of runtime
 
 ##Debug
-TODO, find the way to add break point into runtime
+TODO, need to find the way to add break point into runtime
 
 #Deploy
-You can choise any deploy tool to manage the deployment. 
+For now, I used docker build code, and deploy the image to production server. However, there are many good DevOps tool to manage deployment. 
