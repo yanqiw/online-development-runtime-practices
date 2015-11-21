@@ -171,7 +171,7 @@ __'-v "$PWD":/code'__ is used to attach the code to container.
 - can I only care the code without think about the hosting.
 - can I setup runtime and attach resource in one step
 
-###Ideas
+###Feeling
 - If I already have the VM, I could create project on VM by one command line
 	+ Create project folder on my laptop
 	+ Create remote git repo
@@ -198,6 +198,21 @@ For now, I still need to login the VM to check the logs of runtime
 
 ##Debug
 TODO, need to find the way to add break point into runtime
+
+##Design thinking
+###Thinking
+- Dose the code push to remote?
+- Dose the code effective?
+- How's going of the runtime
+- Do I need to run database migration or lint script in runtime or local?
+
+###Feeling
+- know what is happening on runtime
+- the synchronized still not convenient 
+- I can manage the runtime dirctly 
+
+###Ideas
+TODO
 
 #Deploy
 For now, I used docker build code, and deploy the image to production server. However, there are many good DevOps tool to manage deployment. 
