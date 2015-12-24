@@ -31,10 +31,20 @@ I use git to synchronized code between local and online runtime.
 
 ##Install SSH client on laptop
 I need to login my VM by SSH client. Below are two options:
-- [putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+- [putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/dow##nload.html)
 - [MobaXterm](http://mobaxterm.mobatek.net/)
 
 I prefer MobaXterm, as it provides more powerful tools
+
+##Design thinking
+###Thinking
+- The cloud part should be hidden for developer.
+
+###Feeling
+- Too many things need to know for developer before start coding
+
+###Ideas
+- TODO
 
 #Initialize online runtime
 ##Build a bare git repository image and run it
@@ -147,6 +157,28 @@ docker run --name project-runtime -p 8000:8000 -v "$PWD":/code -d django-rest-ru
 ```
 __'-v "$PWD":/code'__ is used to attach the code to container.
 
+##Design thinking
+###Thinking
+- I need to think where to put the VM. 
+- Dose the VM could access docker hub fast
+- Which OS need to be installed on VM
+- Dose the VM could support the rumtime's requirement
+- manage the shared folder between git and runtime containers
+- manage runtime container with attach resource, such as database, cache
+
+###Feeling
+- why I need to care VM? It should be always there for using.
+- can I only care the code without think about the hosting.
+- can I setup runtime and attach resource in one step
+
+###Feeling
+- If I already have the VM, I could create project on VM by one command line
+	+ Create project folder on my laptop
+	+ Create remote git repo
+	+ init git repo, and setup auto push after commit
+	+ Add remote git repo to my local git
+- Setup the runtime and attach resource by one configuration file.
+
 #Development
 ##Edit code and commit to online runtime
 I can open a IDE, such as sublime text to edit my code. After edited, I commit the code to local git and push to remote, and check the result on cloud development runtime.
@@ -166,6 +198,21 @@ For now, I still need to login the VM to check the logs of runtime
 
 ##Debug
 TODO, need to find the way to add break point into runtime
+
+##Design thinking
+###Thinking
+- Dose the code push to remote?
+- Dose the code effective?
+- How's going of the runtime
+- Do I need to run database migration or lint script in runtime or local?
+
+###Feeling
+- know what is happening on runtime
+- the synchronized still not convenient 
+- I can manage the runtime dirctly 
+
+###Ideas
+TODO
 
 #Deploy
 For now, I used docker build code, and deploy the image to production server. However, there are many good DevOps tool to manage deployment. 
