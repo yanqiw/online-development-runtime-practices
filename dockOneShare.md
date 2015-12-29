@@ -75,10 +75,12 @@
 ![架构概要](http://frankwang.cn/img/Architecture_Overview.png)
 
 ##概念验证
-一小段视频录像，演示如何在云端使用开发环境（制作中）
 - 在本地编辑代码
 - 用Git同步到云端
 - 用docker运行代码查看结果
+
+###一小段视频录像，演示如何在云端使用开发环境（制作中）
+[视频演示如何在云端进行Django项目开发](http://v.youku.com/v_show/id_XMTQyODEwNDQ3Ng==.html)
 
 ##详细步骤
 参考[在线开发环境实践](https://github.com/yanqiw/online-development-runtime-practices)
